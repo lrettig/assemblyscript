@@ -4,6 +4,13 @@
  *//***/
 
 import {
+  NodeKind,
+    SourceKind,
+} from "./ast";
+
+export { NodeKind, SourceKind };
+
+import {
   Compiler,
   Options,
   Target,
