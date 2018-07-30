@@ -169,5 +169,5 @@ export function buildTSD(program: Program): string {
 
 /** Prefix indicating a library file. */
 export { LIBRARY_PREFIX, CommonFlags } from "./common";
-export { NodeKind, SourceKind } from "./ast";
+export { Node, NodeKind, SourceKind } from "./ast";
 export { TypeFlags, TypeKind } from "./types";
