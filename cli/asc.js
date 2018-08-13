@@ -221,7 +221,8 @@ exports.main = function main(argv, options, callback) {
     );
   }
   function applyTransform(name, ...args) {
-    transforms.forEach(transform => {
+    transforms.forEach((transform, i) => {
+      if (args.transformArgs[i]) args.unshift(args.transformArgs[i]);
       if (typeof transform[name] === "function") transform[name](...args);
     });
   }
