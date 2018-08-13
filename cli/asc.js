@@ -220,10 +220,10 @@ exports.main = function main(argv, options, callback) {
       )
     );
   }
-  function applyTransform(name, ...args) {
+  function applyTransform(name, ...innerArgs) {
     transforms.forEach((transform, i) => {
-      if (args.transformArgs[i]) args.unshift(args.transformArgs[i]);
-      if (typeof transform[name] === "function") transform[name](...args);
+      if (args.transformArgs && args.transformArgs[i]) innerArgs.push(args.transformArgs[i]);
+      if (typeof transform[name] === "function") transform[name](...innerArgs);
     });
   }
 
